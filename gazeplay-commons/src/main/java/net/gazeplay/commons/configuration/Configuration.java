@@ -582,7 +582,7 @@ public class Configuration implements Cloneable {
     public Boolean isFixationSequenceDisabled() {
         return fixationSequenceDisabledProperty.getValue();
     }
-    public Boolean isStaticAOIDisabled(){
+    public Boolean isStaticAOIEnabled(){
         return staticAOIDisabledProperty.getValue();
     }
 

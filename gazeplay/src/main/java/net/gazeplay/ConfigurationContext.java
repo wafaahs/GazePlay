@@ -815,7 +815,7 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
     private static CheckBox buildStaticAOI(Configuration configuration, ConfigurationContext configurationContext) {
         CheckBox checkBox = new CheckBox();
 
-        checkBox.setSelected(configuration.isStaticAOIDisabled());
+        checkBox.setSelected(configuration.isStaticAOIEnabled());
 
         checkBox.selectedProperty().addListener((o) -> {
             configuration.getStaticAOIDisabledProperty().setValue(checkBox.isSelected());
