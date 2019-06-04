@@ -25,6 +25,7 @@ import net.gazeplay.commons.utils.CssUtil;
 import net.gazeplay.commons.utils.games.BackgroundMusicManager;
 import net.gazeplay.commons.utils.games.Utils;
 import net.gazeplay.commons.utils.multilinguism.Multilinguism;
+import net.gazeplay.commons.utils.stats.StaticAOI;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
@@ -159,6 +160,9 @@ public class GazePlay extends Application {
 
     public void onDisplayAOI(AreaOfInterest areaOfInterest) {
         areaOfInterest.setUpOnStage(primaryScene);
+    }
+    public void onDisplayStaticAOI(StaticAOI staticAOI){
+        staticAOI.setUpOnStage(primaryScene);
     }
 
     public void onDisplayConfigurationManagement(ConfigurationContext configurationContext) {

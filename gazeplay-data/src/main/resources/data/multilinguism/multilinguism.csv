@@ -144,7 +144,7 @@ MathDescDiv,, القسمة: اقسم الرقمين,,,,Divide two numbers!,,Divi
 0 to 15,,0 إلى 15,,,,0 to 15,,De 0 à 15,,,,,,,,,,,
 0 to 20,,0 إلى 20,,,,0 to 20,,De 0 à 20,,,,,,,,,,,
 0 to 30,,0 إلى 30,,,,0 to 30,,De 0 à 30,,,,,,,,,,,
-findodd,Çfarë nuk shkon ?,,,,,Find the Odd one out,,Trouvez l’intrus,,,Trova l’intruso,,,,,,,,
+findodd,Çfarë nuk shkon ?,استخرج الغريب,,,,Find the Odd one out,,Trouvez l’intrus,,,Trova l’intruso,,,,,,,,
 Vertical,,عمودي,,,,Vertical,,Verticale,,,,,,,,,,,
 Horizontal,,أفقي,,,,Horizontal,,Horizontale,,,,,,,,,,,
 Diagonal from upper left to lower right,,,,,,Diagonal from upper left to lower right,,Diagonale d'en haut à gauche à en bas à droite,,,,,,,,,,,

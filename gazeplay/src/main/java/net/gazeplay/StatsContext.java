@@ -247,6 +247,8 @@ public class StatsContext extends GraphicalContext<BorderPane> {
         HomeButton aoiButton = new HomeButton("data/common/images/aoibtn.png");
         aoiButton.addEventHandler(MouseEvent.MOUSE_CLICKED, AOIEvent);
 
+
+
         HBox controlButtonPane = new HBox();
         ControlPanelConfigurator.getSingleton().customizeControlePaneLayout(controlButtonPane);
         controlButtonPane.setAlignment(Pos.CENTER_RIGHT);
