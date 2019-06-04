@@ -355,6 +355,10 @@ public class Configuration implements Cloneable {
         if (buffer != null) {
             areaOfInterestDisabledProperty.setValue(Boolean.parseBoolean(buffer));
         }
+        buffer = prop.getProperty(PROPERTY_NAME_STATICAOI_DISABLED);
+        if(buffer!=null){
+            staticAOIDisabledProperty.setValue(Boolean.parseBoolean(buffer));
+        }
         buffer = prop.getProperty(PROPERTY_NAME_CONVEX_HULL_DISABLED);
         if (buffer != null) {
             convexHullDisabledProperty.setValue(Boolean.parseBoolean(buffer));
@@ -471,10 +475,13 @@ public class Configuration implements Cloneable {
                 Boolean.toString(this.heatMapDisabledProperty.getValue()));
         properties.setProperty(PROPERTY_NAME_AREA_OF_INTEREST_DISABLED,
                 Boolean.toString(this.areaOfInterestDisabledProperty.getValue()));
+
         properties.setProperty(PROPERTY_NAME_CONVEX_HULL_DISABLED,
                 Boolean.toString(this.convexHullDisabledProperty.getValue()));
         properties.setProperty(PROPERTY_NAME_VIDEO_RECORDING_DISABLED,
                 Boolean.toString(this.videoRecordingDisabledProperty.getValue()));
+        properties.setProperty(PROPERTY_NAME_STATICAOI_DISABLED,
+                Boolean.toString(this.staticAOIDisabledProperty.getValue()));
         properties.setProperty(PROPERTY_NAME_FIXATIONSEQUENCE_DISABLED,
                 Boolean.toString(this.fixationSequenceDisabledProperty.getValue()));
         properties.setProperty(PROPERTY_NAME_MUSIC_VOLUME, Double.toString(this.musicVolumeProperty.getValue()));
@@ -582,6 +589,7 @@ public class Configuration implements Cloneable {
     public Boolean isFixationSequenceDisabled() {
         return fixationSequenceDisabledProperty.getValue();
     }
+
     public Boolean isStaticAOIEnabled(){
         return staticAOIDisabledProperty.getValue();
     }

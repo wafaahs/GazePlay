@@ -248,12 +248,25 @@ public class StatsContext extends GraphicalContext<BorderPane> {
         aoiButton.addEventHandler(MouseEvent.MOUSE_CLICKED, AOIEvent);
 
 
+        EventHandler<Event> staticAOIEvent = e -> {
+
+            StaticAOI staticAOI = StaticAOI.newInstance(gazePlay, stats);
+            gazePlay.onDisplayStaticAOI(staticAOI);
+        };
+
+        HomeButton staticAOIbtn = new HomeButton("data/common/images/staticAOI.png");
+        staticAOIbtn.addEventFilter(MouseEvent.MOUSE_CLICKED, staticAOIEvent);
+
 
         HBox controlButtonPane = new HBox();
         ControlPanelConfigurator.getSingleton().customizeControlePaneLayout(controlButtonPane);
         controlButtonPane.setAlignment(Pos.CENTER_RIGHT);
         if (config.isAreaOfInterestEnabled())
             controlButtonPane.getChildren().add(aoiButton);
+
+        if(config.isStaticAOIEnabled())
+            controlButtonPane.getChildren().add(staticAOIbtn);
+
         controlButtonPane.getChildren().add(homeButton);
 
         if (continueButton != null) {
