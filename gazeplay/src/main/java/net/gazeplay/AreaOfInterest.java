@@ -386,7 +386,7 @@ public class AreaOfInterest extends GraphicalContext<BorderPane> {
             gazePlay.onDisplayStats(statsContext);
         };
 
-        HomeButton aoiButton = new HomeButton("data/common/images/home-button.png");
+        HomeButton aoiButton = new HomeButton("data/common/images/back_button.png");
         aoiButton.addEventHandler(MouseEvent.MOUSE_CLICKED, AOIEvent);
         pane.getChildren().add(aoiButton);
         pane.setAlignment(Pos.CENTER_RIGHT);

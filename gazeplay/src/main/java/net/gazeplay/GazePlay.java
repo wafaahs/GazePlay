@@ -25,7 +25,7 @@ import net.gazeplay.commons.utils.CssUtil;
 import net.gazeplay.commons.utils.games.BackgroundMusicManager;
 import net.gazeplay.commons.utils.games.Utils;
 import net.gazeplay.commons.utils.multilinguism.Multilinguism;
-import net.gazeplay.commons.utils.stats.StaticAOI;
+
 
 import java.awt.*;
 import java.awt.event.InputEvent;
