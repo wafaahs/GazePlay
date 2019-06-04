@@ -31,6 +31,7 @@ public class Configuration implements Cloneable {
     private static final String PROPERTY_NAME_AREA_OF_INTEREST_DISABLED = "AREA_OF_INTEREST_DISABLED";
     private static final String PROPERTY_NAME_CONVEX_HULL_DISABLED = "CONVEX_HULL_DISABLED";
     private static final String PROPERTY_NAME_VIDEO_RECORDING_DISABLED = "VIDEO_RECORDING_DISABLED";
+    private static final String PROPERTY_NAME_STATICAOI_DISABLED = "STATICAOI_DISABLED";
     private static final String PROPERTY_NAME_FIXATIONSEQUENCE_DISABLED = "FIXATIONSEQUENCE_DISABLED";
     private static final String PROPERTY_NAME_MUSIC_VOLUME = "MUSIC_VOLUME";
     private static final String PROPERTY_NAME_MUSIC_FOLDER = "MUSIC_FOLDER";
@@ -68,6 +69,7 @@ public class Configuration implements Cloneable {
     private static final boolean DEFAULT_VALUE_CONVEX_HULL_DISABLED = false;
     private static final boolean DEFAULT_VALUE_VIDEO_RECORDING = false;
     private static final boolean DEFAULT_VALUE_FIXATIONSEQUENCE_DISABLED = false;
+    private static final boolean DEFAULT_VALUE_STATICAOI_DISABLED = false;
     public static final double DEFAULT_VALUE_MUSIC_VOLUME = 0.25;
     public static final String DEFAULT_VALUE_MUSIC_FOLDER = "";
     private static final Double DEFAULT_VALUE_EFFECTS_VOLUME = DEFAULT_VALUE_MUSIC_VOLUME;
@@ -200,6 +202,9 @@ public class Configuration implements Cloneable {
     @Getter
     protected final BooleanProperty fixationSequenceDisabledProperty = new SimpleBooleanProperty(this,
             PROPERTY_NAME_FIXATIONSEQUENCE_DISABLED, DEFAULT_VALUE_FIXATIONSEQUENCE_DISABLED);
+    @Getter
+    protected final BooleanProperty staticAOIDisabledProperty = new SimpleBooleanProperty(this,
+            PROPERTY_NAME_STATICAOI_DISABLED, DEFAULT_VALUE_STATICAOI_DISABLED);
     @Getter
     protected final BooleanProperty gazeMouseProperty = new SimpleBooleanProperty(this, PROPERTY_NAME_GAZE_MOUSE,
             DEFAULT_VALUE_GAZE_MOUSE);
@@ -576,6 +581,9 @@ public class Configuration implements Cloneable {
 
     public Boolean isFixationSequenceDisabled() {
         return fixationSequenceDisabledProperty.getValue();
+    }
+    public Boolean isStaticAOIDisabled(){
+        return staticAOIDisabledProperty.getValue();
     }
 
     public Double getMusicVolume() {

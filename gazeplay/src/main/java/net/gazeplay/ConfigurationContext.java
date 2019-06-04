@@ -324,9 +324,17 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
 
             addToGrid(grid, currentFormRow, label, input);
         }
+        {
+            I18NText label = new I18NText(translator, "EnableStaticAOI", COLON);
+            CheckBox input = buildStaticAOI(config, configurationContext);
+
+            addToGrid(grid, currentFormRow, label, input);
+        }
 
         return grid;
     }
+
+
 
     private static void addToGrid(GridPane grid, AtomicInteger currentFormRow, I18NText label, final Node input) {
 
@@ -800,6 +808,20 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
             configuration.getVideoRecordingDisabledProperty().setValue(checkBox.isSelected());
             configuration.saveConfigIgnoringExceptions();
         });
+
+        return checkBox;
+    }
+
+    private static CheckBox buildStaticAOI(Configuration configuration, ConfigurationContext configurationContext) {
+        CheckBox checkBox = new CheckBox();
+
+        checkBox.setSelected(configuration.isStaticAOIDisabled());
+
+        checkBox.selectedProperty().addListener((o) -> {
+            configuration.getStaticAOIDisabledProperty().setValue(checkBox.isSelected());
+            configuration.saveConfigIgnoringExceptions();
+        });
+
 
         return checkBox;
     }
