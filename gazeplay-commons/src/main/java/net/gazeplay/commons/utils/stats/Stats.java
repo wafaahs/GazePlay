@@ -53,6 +53,8 @@ public class Stats implements GazeMotionListener {
     protected String gameName;
     private Instant starts;
     private int counter = 0;
+    @Getter
+    private int roundsCounter=0;
     private List<CoordinatesTracker> movementHistory = new ArrayList<>();
     private long previousTime = 0;
     private int previousX = 0;
@@ -104,6 +106,7 @@ public class Stats implements GazeMotionListener {
 
     public void notifyNewRoundReady() {
         currentRoundStartTime = System.currentTimeMillis();
+        roundsCounter++;
         takeScreenShot();
     }
 

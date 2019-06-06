@@ -60,6 +60,11 @@
     -fx-fill: white;
     -fx-font-size: 20;
 }
+#subTitle {
+    -fx-fill: white;
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+}
 
 .gameChooserButton {
     -fx-background-radius: 0;
