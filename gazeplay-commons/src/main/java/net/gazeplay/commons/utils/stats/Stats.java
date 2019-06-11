@@ -88,6 +88,10 @@ public class Stats implements GazeMotionListener {
 
     private Long currentRoundStartTime;
 
+    @Getter
+    private StaticAOIDetails staticAOIDetails;
+
+
     public Stats(Scene gameContextScene) {
         this(gameContextScene, null);
     }

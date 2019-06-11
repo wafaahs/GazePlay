@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import lombok.NonNull;
+import lombok.Setter;
 import net.gazeplay.commons.configuration.Configuration;
 import net.gazeplay.commons.ui.I18NText;
 import net.gazeplay.commons.ui.Translator;
@@ -27,9 +28,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class StaticAOI extends GraphicalContext<BorderPane>{
 
-    //Original Dimensions of the Game Played
-
-    //
 
     private static final String COLON = "Colon";
     private static Boolean ALIGN_LEFT = true;
@@ -41,19 +39,12 @@ public class StaticAOI extends GraphicalContext<BorderPane>{
     private Configuration config;
 
     private ImageView screenshot;
-    public class staticAOIBox{
-        int x;
-        int y;
-        double width;
-        double height;
 
-        int countFixations;
+//    private ArrayList<>;
 
 
-    }
 
-
-    private static void addToGrid(GridPane grid, AtomicInteger currentFormRow, I18NText label, Text value) {
+    private void addToGrid(GridPane grid, AtomicInteger currentFormRow, I18NText label, Text value) {
 
         final int COLUMN_INDEX_LABEL_LEFT = 0;
         final int COLUMN_INDEX_INPUT_LEFT = 1;
@@ -97,7 +88,6 @@ public class StaticAOI extends GraphicalContext<BorderPane>{
 
         super(gazePlay, root);
         this.stats = stats;
-
 
         final Translator translator = gazePlay.getTranslator();
 
@@ -184,6 +174,15 @@ public class StaticAOI extends GraphicalContext<BorderPane>{
                 addToGrid(grid, currentFormRow, label, value);
             }
         }
+        {
+            I18NText label = new I18NText(translator, "Number of AOIs", COLON);
+
+            Text value = new Text("10");
+
+            if (!(stats instanceof ExplorationGamesStats)) {
+                addToGrid(grid, currentFormRow, label, value);
+            }
+        }
 
 
 
@@ -213,12 +212,19 @@ public class StaticAOI extends GraphicalContext<BorderPane>{
         screenshot = new ImageView();
         screenshot.setPreserveRatio(true);
         screenshot.setImage(new Image(stats.getSavedStatsInfo().getScreenshotFile().toURI().toString()));
-        screenshot.setFitWidth(750);
+
+        root.widthProperty().addListener((observable, oldValue, newValue) -> {
+            screenshot.setFitWidth(newValue.doubleValue() * 0.55);
+            //NEED TO UPDATE THEM BOXES HERE
+
+        });
 
         stackPane.getChildren().add(screenshot);
 
         StackPane centerStackPane = new StackPane();
         centerStackPane.getChildren().add(stackPane);
+
+
 
 
 

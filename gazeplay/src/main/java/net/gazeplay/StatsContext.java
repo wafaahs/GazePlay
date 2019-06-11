@@ -53,6 +53,7 @@ public class StatsContext extends GraphicalContext<BorderPane> {
 
     private final Stats stats;
 
+
     private static void addToGrid(GridPane grid, AtomicInteger currentFormRow, I18NText label, Text value) {
 
         final int COLUMN_INDEX_LABEL_LEFT = 0;
@@ -90,6 +91,7 @@ public class StatsContext extends GraphicalContext<BorderPane> {
             throws IOException {
         super(gazePlay, root);
         this.stats = stats;
+
 
         final Translator translator = gazePlay.getTranslator();
 
